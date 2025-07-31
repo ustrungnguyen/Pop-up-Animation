@@ -1,0 +1,137 @@
+body {
+    position: relative;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    background-color: lightsalmon;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    width: 100%;
+}
+
+/* ----- Open Pop-up Button ----- */
+#open-popup-button {
+    position: fixed;
+    z-index: -1;
+    top: 50%;
+    left: 42%;
+    display: block;
+    border: none;
+    border-radius: 6px;
+    background-color: rgb(221, 94, 94);
+    color: white;
+    font-size: 25px;
+    font-weight: bold;
+    padding: 30px 80px 30px 80px;
+    cursor: pointer;
+    box-shadow: 0 8px 14px rgba(0, 0, 0, 0.4);
+}
+
+/* Hover */
+#open-popup-button:hover {
+    opacity: 0.85;
+    box-shadow: 0px 15px 14px rgba(0, 0, 0, 0.6);
+    transition: 500ms;
+}
+
+/* ----- Pop-up Container ----- */
+#popup-container {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    z-index: 101;
+    background-color: white;
+    width: 500px;
+    height: 500px;
+    border-radius: 10px;
+    padding: 50px 80px 50px 80px;
+    margin-top: 50px;
+    opacity: 0;
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    transform: translate(-50%, -50%) scale(0.8);
+}
+
+#popup-container.active {
+    display: block;
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+/* Phía trên pop-up */
+.function-button {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.return-icon, .close-icon {
+    background: transparent;
+    padding: 10px 8px 10px 8px;
+    border-radius: 6px;
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+}
+
+.return-icon:hover, .close-icon:hover {
+    background-color: rgba(240, 240, 243, 1);
+    transition: 200ms;
+}
+
+/* Giữa (main content) pop-up */
+.popup-content {
+    margin-top: 70px;
+    margin-bottom: 95px;
+}
+
+.popup-content p {
+    margin-bottom: 40px;
+}
+
+.input-box {
+    width: 91.5%;       /* Fit to container */
+    border: 2px solid rgba(238, 237, 237, 1);
+    border-radius: 6px;
+    font-size: 120%;
+    padding: 20px 20px 20px 20px;
+    margin: none;
+}
+
+/* Phần dưới của pop-up */
+.navigating-button-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-button {
+    background: transparent;
+    border: none;
+    color: black;
+    border-radius: 6px;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 20px 80px 20px 80px;
+    margin: 0;
+    cursor: pointer;
+}
+
+.continue-button {
+    background-color: rgba(241, 99, 99, 1);
+    color: white;
+    margin: 0;
+}
+
+.nav-button:hover {
+    background-color: rgba(240, 240, 243, 1);
+    transition: 200ms;
+}
+
+.continue-button:hover {
+    background-color: rgb(245, 132, 132);
+    transition: 200ms;
+}
